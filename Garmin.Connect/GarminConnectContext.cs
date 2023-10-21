@@ -54,6 +54,9 @@ public class GarminConnectContext
         // Console.WriteLine($"{url}\n{json}\n\n\n");
         // return default;
 
+        if (json.Length == 0)
+            return default(T);
+
         return GarminSerializer.To<T>(json);
     }
 
